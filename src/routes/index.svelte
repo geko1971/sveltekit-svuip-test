@@ -2,22 +2,21 @@
   import '../styles/index.scss';
 
   import _ from 'lodash';
+  const { map, assign } = _;
 
   import Flex from 'svelte-flex';
   import _solutions from './_configurations/solutions.json';
 
-  const solutions = _.map(_solutions, (v, k) => _.assign(v, { id: k }));
+  const solutions = map(_solutions, (v, k) => assign(v, { id: k }));
   
   import DataGrid from '../components/common/DataGrid.svelte';
-  let gridData; // = _.values(_solutions);
   const columns = [
     'class',
-    'status',
     {
-      name: 'intermediateXml',
-      width: '80%',
-      // datatype: 'html',
-      // formatter: (cell) => `<pre lang="xml">${cell}</pre>`
+      name: 'status',
+      // width: '80%',
+      datatype: 'html',
+      formatter: (cell) => cell === 'INSTALLED' ? `<code><b>${cell}</b></code>` : `<code>${cell}</code>`
     },
     'technology',
     'service',
@@ -29,15 +28,15 @@
     {
       id: 'edit-action',
       value: 'Edit',
-      onClick: (cell, row) => alert(`Editing "${row.cells[0].data}" version "${row.cells[3].data}"`),
+      onClick: (cell, row) => alert(`Editing flow for technology "${row.cells[2].data}", service "${row.cells[3].data}"`),
     },
     {
       id: 'delete-action',
       value: 'Delete',
-      onClick: (cell, row) => alert(`Deleting "${row.cells[0].data}" version "${row.cells[3].data}"`),
+      onClick: (cell, row) => alert(`Deleting flow for technology "${row.cells[2].data}", service "${row.cells[3].data}"`),
     }
   ];
-  const solutionName = 'TBS_SELF';
+  const solutionName = 'TBS_GRN';
   const server = {
     url: `api/ted/tbs/solution/${solutionName}/pattern`,
     then: data => data.patterns.map(pattern => pattern),
@@ -66,10 +65,7 @@
   {/each}
   </Flex>
   
-  <DataGrid data={gridData} {server} {columns} {rowActions} />
+  <DataGrid {server} {columns} {rowActions} />
 
   <FlowComposer data={flowData} />
-
 </main>
-
-<!-- <style src="../styles/index.scss"></style> -->

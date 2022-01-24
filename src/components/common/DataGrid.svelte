@@ -1,5 +1,6 @@
 <script>
   import {html, h} from 'gridjs';
+  import { itIT } from "gridjs/l10n"; //it-IT localization
   import Grid from 'gridjs-svelte';
 
   export let columns, data, server;
@@ -13,7 +14,8 @@
     //datatypes
     switch (c.datatype) {
       case 'html':
-        c.formatter = c.formatter ? (cell => html(c.formatter(cell))) : (cell => html(cell));
+        let originalformatter = c.formatter;
+        c.formatter = (cell) => originalformatter ? html(originalformatter(cell)) : html(cell);
         break;
       default:
         break;
@@ -52,4 +54,5 @@
     paginationButton: 'gridjs-pagination-button secondary outline'
   }}
   pagination={pagination}
+  language={itIT}
 />
