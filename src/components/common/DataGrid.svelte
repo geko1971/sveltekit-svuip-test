@@ -1,5 +1,4 @@
 <script>
-  import {map} from 'lodash';
   import {html, h} from 'gridjs';
   import Grid from 'gridjs-svelte';
 
@@ -29,7 +28,7 @@
       formatter: (cell, row) => {
         return h('div', {
           className: 'gridjs-row-actions',
-        }, ...map(rowActions, rowAction => {
+        }, ...rowActions.map(rowAction => {
           return h('button', {
             id: rowAction.id,
             className: 'gridjs-row-action-button',

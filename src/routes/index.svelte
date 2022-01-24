@@ -2,11 +2,11 @@
   import '../styles/index.scss';
 
   import _ from 'lodash';
+
   import Flex from 'svelte-flex';
   import _solutions from './_configurations/solutions.json';
 
   const solutions = _.map(_solutions, (v, k) => _.assign(v, { id: k }));
-  
   
   import DataGrid from '../components/common/DataGrid.svelte';
   let gridData; // = _.values(_solutions);
@@ -16,8 +16,8 @@
     {
       name: 'intermediateXml',
       width: '80%',
-      datatype: 'html',
-      formatter: (cell) => `<pre lang="xml">${cell}</pre>`
+      // datatype: 'html',
+      // formatter: (cell) => `<pre lang="xml">${cell}</pre>`
     },
     'technology',
     'service',
@@ -71,3 +71,5 @@
   <FlowComposer data={flowData} />
 
 </main>
+
+<!-- <style src="../styles/index.scss"></style> -->
