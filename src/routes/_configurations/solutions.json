@@ -1,0 +1,23 @@
+{
+  "another-component": {
+    "name": "Another Component",
+    "description": "Quisque laoreet consectetur dui, at fermentum libero lobortis eget. Vivamus enim ante, commodo id blandit eget, dictum eget mauris. In eget massa at ligula aliquet egestas. Vivamus accumsan, tortor non venenatis euismod, neque eros eleifend velit, eget viverra eros risus at erat. Maecenas et ultricies massa. Donec sagittis ante eu mi dignissim, eget suscipit magna ultricies. Suspendisse sit amet lacus cursus, viverra ipsum vel, fringilla lorem. Curabitur sagittis interdum sem, nec sollicitudin sem dictum quis.",
+    "author": "hpe",
+    "version": "0.1",
+    "state": "active"
+  },
+  "tbsa-designer": {
+    "name": "TBS Automation Flow Designer",
+    "description": "Component to render a <b>drag-and-drop designer</b> to configure troubleshooting automation flows for specific technologies and/or catalog services.",
+    "author": "hpe",
+    "version": "0.1",
+    "state": "active"
+  },
+  "mobile-test": {
+    "name": "5G Mobile Test",
+    "description": "Component to render <b>5G Mobile Test</b> information.<br>It is instantiated receiving MSISDN and IMEI values for a mobile USIM, that are used to retrieve service state information from (Core and Voice) NW Domain Controllers and perform cross-check via Test & Diagnostic system.",
+    "author": "hpe",
+    "version": "0.1",
+    "state": "active"
+  }
+}

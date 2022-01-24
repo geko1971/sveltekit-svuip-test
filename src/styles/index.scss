@@ -1,0 +1,24 @@
+/** gridjs styles **/
+[role='complementary'].gridjs-container {
+  overflow-x: auto;
+}
+div.gridjs-pagination {
+  display: flex;
+}
+[role='status'].gridjs-summary {
+  flex-grow: 2;
+}
+button.gridjs-pagination-button {
+  border: 0;
+  width: auto;
+  padding-top: unset;
+}
+div.gridjs-row-actions {
+  display: inline-flex;
+}
+button.gridjs-row-action-button {
+  font-size: 0.8em;
+  margin: unset;
+  margin-right: 5px;
+  padding: 5px;
+}
